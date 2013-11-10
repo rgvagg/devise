@@ -1,8 +1,10 @@
 class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
-  before_filter :authenticate_user!
+   # load_and_authorize_resource
 
+  before_filter :authenticate_user!
+skip_authorization_check
   def index
     @statuses = Status.all
 
@@ -82,4 +84,16 @@ class StatusesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+ # def a
+  #  @initial=params[:x]
+#    @statuses=Status.where(["name LIKE ?", "#{@initial}%"])
+ #   @number=Status.where(["name LIKE ?", "#{@initial}%"]).count
+#    render("listfew")
+#  end
+
+
+
+
 end

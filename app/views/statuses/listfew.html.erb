@@ -1,0 +1,68 @@
+<h1>Listing statuses</h1>
+
+
+
+
+
+  <div >
+    <p>Sort by name Alphabetical Index</p>
+    <%=link_to("a", :action=>"a", :x=>"a") %>
+    <%=link_to("b", :action=>"a", :x=>"b") %>
+    <%=link_to("c", :action=>"a", :x=>"c") %>
+    <%=link_to("d", :action=>"a", :x=>"d") %>
+    <%=link_to("e", :action=>"a", :x=>"e") %>
+    <%=link_to("f", :action=>"a", :x=>"f") %>
+    <%=link_to("g", :action=>"a", :x=>"g") %>
+    <%=link_to("h", :action=>"a", :x=>"h") %>
+    <%=link_to("i", :action=>"a", :x=>"i") %>
+    <%=link_to("j", :action=>"a", :x=>"j") %>
+    <%=link_to("k", :action=>"a", :x=>"k") %>
+    <%=link_to("l", :action=>"a", :x=>"l") %>
+    <%=link_to("m", :action=>"a", :x=>"m") %>
+    <%=link_to("n", :action=>"a", :x=>"n") %>
+    <%=link_to("o", :action=>"a", :x=>"o") %>
+    <%=link_to("p", :action=>"a", :x=>"p") %>
+    <%=link_to("q", :action=>"a", :x=>"q") %>
+    <%=link_to("r", :action=>"a", :x=>"r") %>
+    <%=link_to("s", :action=>"a", :x=>"s") %>
+    <%=link_to("t", :action=>"a", :x=>"t") %>
+    <%=link_to("u", :action=>"a", :x=>"u") %>
+    <%=link_to("v", :action=>"a", :x=>"v") %>
+    <%=link_to("w", :action=>"a", :x=>"w") %>
+    <%=link_to("x", :action=>"a", :x=>"x") %>
+    <%=link_to("y", :action=>"a", :x=>"y") %>
+    <%=link_to("z", :action=>"a", :x=>"z") %>
+  </div>
+
+
+
+
+
+
+<div>
+<h2>Showing Statuses with names from <%= "#{@initial}" %></h2>
+<h5>Found <%= "#{@number}" %> Statuses with names from <%= "#{@initial}" %></h5>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @statuses.each do |status| %>
+  <tr>
+    <td><%= status.name %></td>
+    <td><%= status.content %></td>
+    <td><%= link_to 'Show', status %></td>
+    <td><%= link_to 'Edit', edit_status_path(status) %></td>
+    <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Status', new_status_path %>
